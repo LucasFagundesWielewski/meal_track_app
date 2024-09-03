@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:meal_track_app/models/category.dart' as app;
-import '../screens/catgories_meals_screen.dart';
+import 'package:meal_track_app/models/category.dart';
+import 'package:meal_track_app/utils/app_routes.dart';
 
 class CategoryItem extends StatelessWidget {
-  final app.Category category;
+  final Category category;
 
   const CategoryItem(this.category);
 
   void _selectCategory(BuildContext context) {
     Navigator.of(context).pushNamed(
-      MaterialPageRoute(
-        builder: (_)
-        {
-          return CatgoriesMealsScreen(category);
-        }
-      ) as String
+      AppRoutes.CATEGORIES_MEALS,
+      arguments: category,
     );
   }
 
