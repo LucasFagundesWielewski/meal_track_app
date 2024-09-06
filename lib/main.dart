@@ -19,15 +19,22 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Raleway',
         canvasColor: const Color.fromRGBO(255, 254, 229, 1),
         textTheme: ThemeData.light().textTheme.copyWith(
-          titleLarge: const TextStyle(
-            fontSize: 20, 
+              titleLarge: const TextStyle(
+                fontSize: 20,
+                fontFamily: 'RobotoCondensed',
+              ),
+            ),
+        appBarTheme: const AppBarTheme(
+          color: Colors.pinkAccent,
+          titleTextStyle: TextStyle(
+            color: Colors.white, // Define a cor do texto da AppBar
+            fontSize: 20,
             fontFamily: 'RobotoCondensed',
           ),
-        )
+        ),
       ),
       home: CategoriesScreen(),
       routes: {
-        AppRoutes.HOME: (context) => CategoriesScreen(),
         AppRoutes.CATEGORIES_MEALS: (context) => CatgoriesMealsScreen(),
         AppRoutes.MEAL_DETAIL: (context) => MealDetailScreen(),
       },
