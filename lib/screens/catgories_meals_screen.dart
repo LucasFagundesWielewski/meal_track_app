@@ -4,7 +4,6 @@ import 'package:meal_track_app/data/dummy_data.dart';
 import '../models/category.dart';
 
 class CatgoriesMealsScreen extends StatelessWidget {
-  
   @override
   Widget build(BuildContext context) {
     final category = ModalRoute.of(context)?.settings.arguments as Category;
@@ -15,7 +14,7 @@ class CatgoriesMealsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(category.title),  
+        title: Text(category.title),
       ),
       body: ListView.builder(
         itemCount: categoryMeals.length,
