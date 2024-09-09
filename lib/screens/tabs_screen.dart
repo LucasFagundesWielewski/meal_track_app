@@ -9,10 +9,12 @@ class TabsScreen extends StatelessWidget {
       length: 2,
       child: Scaffold(
         appBar: AppBar(
-          title: Center(
+          title: const Center(
             child: Text('Vamos cozinhar?'),
           ),
-          bottom: TabBar(
+          bottom: const TabBar(
+            unselectedLabelColor: Colors.white,
+            labelColor: Colors.blueAccent,
             tabs: <Widget>[
               Tab(
                 icon: Icon(Icons.category),
