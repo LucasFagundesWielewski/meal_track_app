@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:meal_track_app/utils/app_routes.dart';
 
 class MainDrawer extends StatelessWidget {
-  Widget _createItem(IconData icon, String label, Function onTap) {
+  Widget _createItem(IconData icon, String label, void Function()? onTap) {
     return ListTile(
       leading: Icon(
         icon,
@@ -16,7 +16,7 @@ class MainDrawer extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      onTap: () {},
+      onTap: onTap,
     );
   }
 

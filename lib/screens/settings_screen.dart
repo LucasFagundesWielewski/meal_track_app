@@ -3,12 +3,23 @@ import 'package:meal_track_app/components/main_drawer.dart';
 import '../models/settings.dart';
 
 class SettingsScreen extends StatefulWidget {
+  final Settings settings;
+  final Function(Settings) onSettingsChanged;
+
+  const SettingsScreen(this.settings, this.onSettingsChanged);
+
   @override
   _SettingsScreen createState() => _SettingsScreen();
 }
 
 class _SettingsScreen extends State<SettingsScreen> {
-  var settings = Settings();
+  late Settings settings;
+
+  @override
+  void initState() {
+    super.initState();
+    settings = widget.settings;
+  }
 
   Widget _createSwitch(
     String title,
@@ -20,7 +31,10 @@ class _SettingsScreen extends State<SettingsScreen> {
       title: Text(title),
       subtitle: Text(subtitle),
       value: value,
-      onChanged: onChanged,
+      onChanged: (value) {
+        onChanged(value);
+        widget.onSettingsChanged(settings);
+      },
     );
   }
 
