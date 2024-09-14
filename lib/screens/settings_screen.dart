@@ -31,8 +31,10 @@ class _SettingsScreen extends State<SettingsScreen> {
       title: Text(title),
       subtitle: Text(subtitle),
       value: value,
-      onChanged: (value) {
-        onChanged(value);
+      onChanged: (newValue) {
+        setState(() {
+          onChanged(newValue);
+        });
         widget.onSettingsChanged(settings);
       },
     );
@@ -41,50 +43,51 @@ class _SettingsScreen extends State<SettingsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Configurações'),
-        ),
-        drawer: MainDrawer(),
-        body: Column(
-          children: <Widget>[
-            Container(
-              padding: const EdgeInsets.all(20),
-              child: Text(
-                'Configurações',
-                style: Theme.of(context).textTheme.titleLarge,
-              ),
+      appBar: AppBar(
+        title: const Text('Configurações'),
+      ),
+      drawer: MainDrawer(),
+      body: Column(
+        children: <Widget>[
+          Container(
+            padding: const EdgeInsets.all(20),
+            child: Text(
+              'Configurações',
+              style: Theme.of(context).textTheme.titleLarge,
             ),
-            Expanded(
-              child: ListView(
-                children: <Widget>[
-                  _createSwitch(
-                    'Sem Glúten',
-                    'Só exibe refeições sem glúten!',
-                    settings.isGlutenFree,
-                    (value) => setState(() => settings.isGlutenFree = value),
-                  ),
-                  _createSwitch(
-                    'Sem Lactose',
-                    'Só exibe refeições sem lactose!',
-                    settings.isLactoseFree,
-                    (value) => setState(() => settings.isLactoseFree = value),
-                  ),
-                  _createSwitch(
-                    'Vegana',
-                    'Só exibe refeições veganas!',
-                    settings.isVegan,
-                    (value) => setState(() => settings.isVegan = value),
-                  ),
-                  _createSwitch(
-                    'Vegetariana',
-                    'Só exibe refeições vegetarianas!',
-                    settings.isVegetarian,
-                    (value) => setState(() => settings.isVegetarian = value),
-                  ),
-                ],
-              ),
+          ),
+          Expanded(
+            child: ListView(
+              children: <Widget>[
+                _createSwitch(
+                  'Sem Glúten',
+                  'Só exibe refeições sem glúten!',
+                  settings.isGlutenFree,
+                  (value) => settings.isGlutenFree = value,
+                ),
+                _createSwitch(
+                  'Sem Lactose',
+                  'Só exibe refeições sem lactose!',
+                  settings.isLactoseFree,
+                  (value) => settings.isLactoseFree = value,
+                ),
+                _createSwitch(
+                  'Vegana',
+                  'Só exibe refeições veganas!',
+                  settings.isVegan,
+                  (value) => settings.isVegan = value,
+                ),
+                _createSwitch(
+                  'Vegetariana',
+                  'Só exibe refeições vegetarianas!',
+                  settings.isVegetarian,
+                  (value) => settings.isVegetarian = value,
+                ),
+              ],
             ),
-          ],
-        ));
+          ),
+        ],
+      ),
+    );
   }
 }
