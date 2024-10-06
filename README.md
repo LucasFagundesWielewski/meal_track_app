@@ -1,16 +1,25 @@
-# meal_track_app
+# Meal Track App
 
-A new Flutter project.
+O **Meal Track App** é um aplicativo móvel desenvolvido em Flutter que permite aos usuários explorar diferentes categorias de refeições, ver detalhes dos pratos e marcar refeições como favoritas. Além disso, o usuário pode configurar preferências alimentares, como refeições sem glúten, veganas, vegetarianas, entre outras.
 
-## Getting Started
+## Funcionalidades Principais
 
-This project is a starting point for a Flutter application.
+- **Navegação por Categorias**: Explore uma ampla variedade de categorias de refeições.
+- **Detalhes da Refeição**: Veja os ingredientes e passos de preparação de cada refeição.
+- **Favoritos**: Marque suas refeições preferidas e acesse facilmente através da aba de favoritos.
+- **Configurações**: Ajuste preferências alimentares, como refeições sem glúten, sem lactose, veganas e vegetarianas.
 
-A few resources to get you started if this is your first Flutter project:
+## Telas do Aplicativo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. **CategoriesScreen**: Mostra uma grade de categorias de refeições.
+2. **CatgoriesMealsScreen**: Exibe as refeições pertencentes a uma categoria selecionada.
+3. **FavoriteScreen**: Lista as refeições marcadas como favoritas.
+4. **MealDetailScreen**: Exibe detalhes de uma refeição, incluindo os ingredientes e os passos de preparação.
+5. **SettingsScreen**: Permite configurar restrições alimentares.
+6. **TabsScreen**: Controla a navegação entre as categorias e os favoritos através de uma barra de navegação inferior.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Instalação
+
+1. Clone este repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/meal_track_app.git
